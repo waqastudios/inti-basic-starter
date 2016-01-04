@@ -41,12 +41,12 @@ function childtheme_override_setup() {
 	
 	add_theme_support(
 		'inti-post-types',
-		array('slides', 'portfolio')
+		array('slides')
 	);
 	
 	add_theme_support(
 		'inti-page-templates',
-		array('front-page', 'news-page', 'portfolio', 'contact')
+		array('front-page')
 	);
 
 	add_theme_support('inti-customizer');
@@ -95,7 +95,13 @@ function childtheme_override_setup() {
 	// editor stylesheet for TinyMCE
 	add_editor_style('/library/css/editor.css');
 		
-		
+	// enqueue child styles
+	wp_register_style('child-styles', get_stylesheet_directory_uri() . '/css/child-min.css', array(), filemtime(get_stylesheet_directory() . '/css/child-min.css'), 'all');
+	wp_enqueue_style('child-styles'); 	
+
+	// enqueue child scripts
+	wp_register_script('child-js', get_stylesheet_directory_uri() . '/js/child-min.js', array(), filemtime(get_stylesheet_directory() . '/js/child-min.js'), true);
+	wp_enqueue_script('child-js');
 }
 add_action('after_setup_theme', 'childtheme_override_setup', 11);
 
