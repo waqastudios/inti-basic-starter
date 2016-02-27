@@ -5,11 +5,11 @@
  * @package Inti
  * @subpackage Templates
  * @since 1.0.0
+ * @version 1.0.1
  */
 
-$default_layout = get_inti_option('page_layout', 'inti_customizer_options', '2c-l');
-$meta_layout = get_inti_option('', '', '', '_inti_layout_radio');
-$layout = inti_get_layout($default_layout, $meta_layout);
+
+$layout = inti_get_layout(get_inti_option('', '', '', '_inti_layout_radio'));
 
 get_header(); ?>
 
@@ -39,6 +39,13 @@ get_header(); ?>
 					case '2c-r': ?>
 
 				<div class="small-12 medium-7 medium-push-5 large-8 large-push-4 columns">
+				
+
+
+				<?php break;
+					case '1c-thin': ?>
+
+				<div class="small-12 medium-10 medium-centered large-9 columns">
 				
 
 				<?php } //end switch ?>
