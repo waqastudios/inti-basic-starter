@@ -19,6 +19,8 @@
  * 
  * Remove or add array elements in add_theme_support() as needed
  */
+
+add_action('after_setup_theme', 'childtheme_override_setup', 11);
 function childtheme_override_setup() {
 
 	/**
@@ -94,18 +96,29 @@ function childtheme_override_setup() {
 	
 	// editor stylesheet for TinyMCE
 	add_editor_style('/library/css/editor.css');
-		
-	// enqueue child styles
-	wp_register_style('child-styles', get_stylesheet_directory_uri() . '/css/child-min.css', array(), filemtime(get_stylesheet_directory() . '/css/child-min.css'), 'all');
-	wp_enqueue_style('child-styles'); 	
 
-	// enqueue child scripts
-	wp_register_script('child-js', get_stylesheet_directory_uri() . '/js/child-min.js', array(), filemtime(get_stylesheet_directory() . '/js/child-min.js'), true);
-	wp_enqueue_script('child-js');
+	// load parent translations
+	load_theme_textdomain( 'inti' , get_template_directory() . '/languages');
+
+	// load child theme translations
+	load_child_theme_textdomain( 'inti-child' , get_stylesheet_directory() . '/languages');
+		
+	/**
+	 * Load framework files from child theme's framework directory
+	 * 
+	 * locate_template() will first check the child theme for a file in that location,
+	 * and if not found, will search the parent theme. Override parent theme files by giving
+	 * the child theme versions the same name, set a unique name or add a prefix to load
+	 * them in addition to parent theme files.
+	 */ 
+	// require_once locate_template('/framework/content/child-content-header.php');
+	// require_once locate_template('/framework/content/child-content-footer.php');
+
+
 }
-add_action('after_setup_theme', 'childtheme_override_setup', 11);
 
 /**
  * Add your own custom functions below
  */
+ 
  
