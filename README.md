@@ -12,10 +12,9 @@ The Basic Starter theme is an example child theme for Inti Foundation. Use this 
 Inti Foundation and its child themes come configured with a Gulp file that will compile your Sass and javascript changes for you with its watch function. (If your workflow doesn’t include Gulp, please review this file to see what library elements need to be compiled into a final CSS file with your own tools).
 
 #### To begin:
+ * Modify config.yml file for your setup
  * `npm install`
  * `npm build`
- * Modify config.yml file for your setup
- * Install and add any dependencies
  * `npm default`, a new browser window will open pointing to a BrowserSync server displaying the WordPress installtion (via BrowserSync).
 
 ### Overwriting parent theme functions with custom files or by unhooking then hooking new functions
