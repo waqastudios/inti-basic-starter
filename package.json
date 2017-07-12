@@ -1,14 +1,14 @@
 {
-  "name": "inti-foundation",
-  "version": "1.4.0",
-  "description": "A responsive WordPress theme built with ZURB's Foundation for Sites 6.",
+  "name": "inti-basic-starter",
+  "version": "1.1.0",
+  "description": "A basic cut-down child theme for Inti Foundation 1.5.0+",
   "repository": {
     "type": "git",
-    "url": "https://github.com/waqastudios/inti-foundation.git"
+    "url": "https://github.com/waqastudios/inti-basic-starter.git"
   },
   "author": "Waqa Studios",
   "license": "GPL-2.0",
-  "homepage": "https://github.com/waqastudios/inti-foundation",
+  "homepage": "https://github.com/waqastudios/inti-basic-starter",
   "dependencies": {
     "foundation-sites": "~6.4.1",
     "jquery": ">=3.0.0",
