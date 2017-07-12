@@ -28,7 +28,7 @@ PATHS:
   # Paths tae any build tae be hard-copied tae dist (for individual enqueue in styles.php)
   # remove here an in gulpfile.babel.js, styles.php an then
   # uncomment in sass: below tae parse in sass task
-  # uncomment in inti.scss to @import
+  # uncomment in app.scss to @import
   staticcss:
     - "node_modules/font-awesome/css/*"
     - "node_modules/slick-carousel/slick/slick.css"
@@ -42,6 +42,11 @@ PATHS:
     # - "node_modules/font-awesome/scss"
     # - "node_modules/slick-carousel/slick/slick.scss"
     - "library/src/**/*.scss"
+
+  # Path tae Sass for the wp_editor/tinymce, added in functions.php
+  # TODO: Make Sass above ignore this one file
+  editorsass:
+    - "library/src/editor.scss"
 
   # "The keyboard...How quaint...."
   foundationjs:
